@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visualización de datos - práctica 2</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/plugins/timeline.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header" style="margin: 20px auto;">
+        <div style="font-size: 15px;padding-bottom: 5px;">
+            <div style="display: flex;align-items: center;gap: 20px;">
+                <img src="https://www.uoc.edu/portal/system/modules/edu.uoc.presentations/resources/img/branding/logo-uoc-default.png"
+                    alt="Logo UOC"
+                    style="height: 50px;">
+                <h3 style="font-size: 22px;font-weight: 500;">
+                    Visualización de datos
+                </h3>
+            </div>
+
+        </div>
+        <div style="background: #73EDFF;padding: 2px 15px;">
+            <div>
+                <div style="text-align:center;"> </div>
+            </div>
+        </div>
+    </div>
+    <div id="spiralplot" class="plot">
+        <h1>Uso de energía por persona en España. 1965-2022.</h1>
+        <p>El uso de energía no sólo incluye la electricidad, sino también otras áreas de consumo, incluidos el transporte, la
+        calefacción y la cocina.</p>
+        <p><strong>Fuente: </strong><a href="https://ourworldindata.org/energy">Our World in Data</a></p>
+        <div id="spiralplot_container" class="plot_container"></div>
+    </div>
+    <div id="candlestick_chart" class="plot">
+        <h1>Precio de Repsol en el mercado. Nov. 2019 - Nov. 2023.</h1>
+        <p>Precio diario de las acciones de Repsol, desde noviembre de 2019 hasta el mismo mes de 2023.</p>
+        <p><strong>Fuente: </strong><a
+                href="https://www.repsol.com/en/shareholders-and-investors/repsol-on-the-stock-exchange/basic-share-data/index.cshtml">Repsol</a>
+        </p>
+        <div id="candlestick_chart_container" class="plot_container"></div>
+    </div>
+    <h1>Uso de electricidad en el mundo.</h1>
+    <p style="margin-bottom:10px;">Infografía sobre el uso de electricidad en el mundo, y los problemas a los que se enfrenta.</p>
+    <div class="infogram-embed" data-id="d0b6efed-8463-4a6d-a3a3-07de025bf12f" data-type="interactive"
+        data-title="Uso de electricidad"></div>
+    <script>!function (e, n, i, s) { var d = "InfogramEmbeds"; var o = e.getElementsByTagName(n)[0]; if (window[d] && window[d].initialized) window[d].process && window[d].process(); else if (!e.getElementById(i)) { var r = e.createElement(n); r.async = 1, r.id = i, r.src = s, o.parentNode.insertBefore(r, o) } }(document, "script", "infogram-async", "https://infogram.com/js/dist/embed-loader-min.js");</script>
+    <div
+        style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px">
+        <a href="https://infogram.com/d0b6efed-8463-4a6d-a3a3-07de025bf12f"
+            style="color:#989898!important;text-decoration:none!important;" target="_blank">Uso de electricidad</a><br><a
+            href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank"
+            rel="nofollow">Infogram</a>
+    </div>
+    <script type="module" src="spiral_chart/spiral_chart.js"></script>
+    <script type="module" src="candlestick_chart/candlestick_chart.js"></script>
+</body>
+
+</html>
