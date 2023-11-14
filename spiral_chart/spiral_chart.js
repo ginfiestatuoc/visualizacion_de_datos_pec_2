@@ -42,6 +42,8 @@ labelTemplate.adapter.add("rotation", function (rotation, target) {
 })
 
 let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.numberFormatter = new am4core.NumberFormatter();
+valueAxis.numberFormatter.numberFormat = "#  kWh";
 valueAxis.tooltip.disabled = true;
 valueAxis.renderer.innerRadius = -25;
 valueAxis.renderer.radius = 25;
@@ -64,7 +66,7 @@ chart.seriesContainer.zIndex = -1;
 let series = chart.series.push(new am4plugins_timeline.CurveColumnSeries());
 series.dataFields.dateX = "year";
 series.dataFields.valueY = "value";
-series.tooltipText = "{valueY}";
+series.tooltipText = "{valueY} kWh";
 series.tooltip.pointerOrientation = "vertical";
 series.tooltip.background.fillOpacity = 0.7;
 series.strokeWidth = 2;
@@ -83,9 +85,7 @@ series.heatRules.push({
     "dataField": "valueY"
 });
 
-chart.dateFormatter.dateFormat = "yyyy"
-window.chart = chart;
-window.series = series;
+chart.dateFormatter.dateFormat = "yyyy";
 chart.cursor = new am4plugins_timeline.CurveCursor();
 chart.cursor.xAxis = dateAxis;
 chart.cursor.yAxis = valueAxis;

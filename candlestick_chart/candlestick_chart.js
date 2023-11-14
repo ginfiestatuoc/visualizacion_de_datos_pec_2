@@ -2,7 +2,6 @@
 import {data} from "./data.js";
 
 am4core.useTheme(am4themes_animated);
-window.candle_data = data
 var chart = am4core.create("candlestick_chart_container", am4charts.XYChart);
 chart.paddingRight = 20;
 
@@ -13,7 +12,7 @@ dateAxis.renderer.grid.template.location = 0;
 
 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 valueAxis.tooltip.disabled = true;
-
+valueAxis.title.text = "Precio (€)";
 var series = chart.series.push(new am4charts.CandlestickSeries());
 series.dataFields.dateX = "date";
 series.dataFields.valueY = "close";
@@ -21,7 +20,7 @@ series.dataFields.openValueY = "open";
 series.dataFields.lowValueY = "low";
 series.dataFields.highValueY = "high";
 series.simplifiedProcessing = true;
-series.tooltipText = "Open:${openValueY.value}\nLow:${lowValueY.value}\nHigh:${highValueY.value}\nClose:${valueY.value}";
+series.tooltipText = "Open: {openValueY.value}€\nLow: {lowValueY.value}€\nHigh: {highValueY.value}€\nClose: {valueY.value}€";
 
 // important!
 // candlestick series colors are set in states. 
